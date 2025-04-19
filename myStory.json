@@ -1,0 +1,231 @@
+{
+    "Title": "Lazy Evening",
+    "Credits": "Created by Christian Sigua (csigua@ucsc.edu).",
+    "InitialLocation": "no remote",
+    "Key": {
+        "Location": "written",
+        "Choice": "phone"
+    },
+    "Mechanism": {
+        "Location": "TV",
+        "Name" : "TV set",
+        "InitialState": "TV off"
+    },
+    "Items": {
+        "Locations": {
+            "penny's": {
+                "Cheese": {
+                    "Text": "Order cheese pizza",
+                    "Target": "eating"
+                },
+                "Pepperoni": {
+                    "Text": "Order pepperoni pizza",
+                    "Target": "eating"
+                },
+                "Wings": {
+                    "Text": "Order chicken wings",
+                    "Target": "eating"
+                }
+            }
+        }
+    },
+    "Locations": {
+        "no remote": {
+            "Body": "It's been a long day. You just wanna watch TV.",
+            "Choices": [
+                {
+                    "Text": "Pick up remote",
+                    "Target": "TV"
+                }
+            ]
+        },
+        "TV": {
+            "Body": "You are at the TV.",
+            "Choices": [
+                {
+                    "Text": "Leave couch",
+                    "Target": "pacing"
+                }
+            ],
+            "TV set": {
+                "TV off": {
+                    "Body": "The TV is off.",
+                    "Choices": [
+                        {
+                            "Text": "Turn on TV",
+                            "Target": "TV on"
+                        }
+                    ]
+                },
+                "TV on": {
+                    "Body": "Nothing but static.",
+                    "Choices": [
+                        {
+                            "Text": "Channel 1",
+                            "Target": "ch1"
+                        },
+                        {
+                            "Text": "Channel 2",
+                            "Target": "ch2"
+                        },
+                        {
+                            "Text": "Channel 3",
+                            "Target": "ch3"
+                        },
+                        {
+                            "Text": "Leave couch",
+                            "Target": "pacing"
+                        }
+                    ]
+                },
+                "ch1": {
+                    "Body": "It's the weather channel. They say the moon looks nice out tonight, but you can't tell because it's raining.",
+                    "Choices": [
+                        {
+                            "Text": "Channel 2",
+                            "Target": "ch2"
+                        },
+                        {
+                            "Text": "Channel 3",
+                            "Target": "ch3"
+                        },
+                        {
+                            "Text": "Leave couch",
+                            "Target": "pacing"
+                        }
+                    ]
+                },
+                "ch2": {
+                    "Body": "National Geographic. They're running a documentary about nature. You could fall asleep to this.",
+                    "Choices": [
+                        {
+                            "Text": "Channel 1",
+                            "Target": "ch1"
+                        },
+                        {
+                            "Text": "Channel 3",
+                            "Target": "ch3"
+                        },
+                        {
+                            "Text": "Leave couch",
+                            "Target": "pacing"
+                        },
+                        {
+                            "Text": "Fall asleep",
+                            "Target": "hungry sleep"
+                        }
+                    ]
+                },
+                "ch3": {
+                    "Body": "It's a commercial for Penny's Pizza. There's a phone number you can call to get a promo code.",
+                    "Choices": [
+                        {
+                            "Text": "Channel 1",
+                            "Target": "ch1"
+                        },
+                        {
+                            "Text": "Channel 2",
+                            "Target": "ch2"
+                        },
+                        {
+                            "Text": "Write down number",
+                            "Target": "written"
+                        },
+                        {
+                            "Text": "Leave couch",
+                            "Target": "pacing"
+                        }
+                    ]
+                },
+                "written": {
+                    "Body": "You write down the phone number.",
+                    "Choices": [
+                        {
+                            "Text": "Channel 1",
+                            "Target": "ch1"
+                        },
+                        {
+                            "Text": "Channel 2",
+                            "Target": "ch2"
+                        },
+                        {
+                            "Text": "Leave couch",
+                            "Target": "pacing"
+                        }
+                    ]
+                }
+            }
+        },
+        "pacing": {
+            "Body": "You turn the TV off and think about what you can do. Back and forth you go, wandering around the living room.",
+            "Choices": [
+                {
+                    "Text": "Sit down",
+                    "Target": "TV"
+                },
+                {
+                    "Text": "Use phone",
+                    "Target": "phone"
+                }
+            ]
+        },
+        "phone": {
+            "Body": "You're at the phone.",
+            "Choices": [
+                {
+                    "Text": "Go back",
+                    "Target": "pacing"
+                }
+            ],
+            "Key Choice": {
+                "Text": "Call phone number",
+                "Target": "calling"
+            }
+        },
+        "calling": {
+            "Body": "You call the phone number you saw in the ad. It's a good deal! 75% off next purchase at Penny's Pizza.",
+            "Choices": [
+                {
+                    "Text": "Go back",
+                    "Target": "pacing"
+                },
+                {
+                    "Text": "Go to Penny's Pizza",
+                    "Target": "penny's"
+                }
+            ]
+        },
+        "penny's": {
+            "Body": "Upon arriving at Penny's, you eye the menu. There's cheese pizza, pepperoni pizza, or chicken strips.",
+            "Choices": [
+                {
+                    "Text": "Order cheese pizza",
+                    "Target": "eating"
+                },
+                {
+                    "Text": "Order pepperoni pizza",
+                    "Target": "eating"
+                },
+                {
+                    "Text": "Order chicken wings",
+                    "Target": "eating"
+                }
+            ]
+        },
+        "eating": {
+            "Body": "You're home! You made it and can now eat your food.",
+            "Choices": [
+                {
+                    "Text": "Eat!",
+                    "Target": "full sleep"
+                }
+            ]
+        },
+        "full sleep": {
+            "Body": "You fall asleep on the couch, satisfied with the meal you just had. Drifting off peacefully, you dream of cloud gazing."
+        },
+        "hungry sleep": {
+            "Body": "You fall asleep on the couch, hungry. You don't get that much sleep, because your stomach growled after just a few hours in protest. Maybe you should've eaten something for dinner?"
+        }
+    }
+}
